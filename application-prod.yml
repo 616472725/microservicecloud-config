@@ -1,0 +1,4 @@
+﻿spring:
+  profiles: prod
+  application:
+    name: microservice-config-prod
