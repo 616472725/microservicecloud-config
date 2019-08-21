@@ -1,22 +1,14 @@
-server:
-  port: 9527
-
+﻿spring:
+  profiles:
+    active: dev
+---
 spring:
+  profiles: dev
   application:
-    name: gmall-zuul-gateway
-eureka:
-  instance:
-    instance-id: gmall-zuul-gateway-9527
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-
-#路由配置，统一前缀，原服务名失效
-zuul:
-  routes:
-    myuser.serviceId: user-service
-    myuser.path: /myuser/**
-#  ignored-services: user-service
-  ignored-services: "*"
-  prefix: /hmy
+    name: microservice-config-dev
+    
+---
+spring:
+  profiles: test
+  application:
+    name: microservice-config-test
